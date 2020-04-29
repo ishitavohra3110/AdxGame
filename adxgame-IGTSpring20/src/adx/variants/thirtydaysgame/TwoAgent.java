@@ -71,7 +71,7 @@ public class TwoAgent extends ThirtyDaysThirtyCampaignsAgent {
             double denom = users_segment;
             double ratio = num/denom;
             // Logging.log(ratio);
-            double spending_Limit = (c.getBudget())*ratio;
+            double spending_Limit = (c.getReach())*ratio;
             // Logging.log(spending_Limit);
             bidEntries.add(new SimpleBidEntry(m,optimalBid,spending_Limit));
 
