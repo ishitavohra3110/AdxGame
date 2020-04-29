@@ -17,9 +17,9 @@ import adx.util.Logging;
  * 
  * @author Enrique Areyan Viqueira
  */
-public class OneAgent extends ThirtyDaysThirtyCampaignsAgent {
+public class agentb extends ThirtyDaysThirtyCampaignsAgent {
 
-  public OneAgent(String host, int port) {
+  public agentb(String host, int port) {
     super(host, port);
   }
 
@@ -34,8 +34,14 @@ public class OneAgent extends ThirtyDaysThirtyCampaignsAgent {
       else {
         throw new AdXException("[x] Bidding for invalid day " + day + ", bids in this game are only for day 1 or 2.");
       }
+      int quality_score=0;
+      if(c.getBudget()==c.getReach())
+        quality_score = 1;
       //Strategy
       double optimalBid = 1;
+      // Bidding only on the exact market segment of the campaign.
+
+      //assign a number to each market segment. 
       Hashtable<MarketSegment, Integer>Ms = new Hashtable<MarketSegment, Integer>();
       int cnt = 0;
       for(MarketSegment m: MarketSegment.values())
@@ -43,9 +49,14 @@ public class OneAgent extends ThirtyDaysThirtyCampaignsAgent {
           Ms.put(m,cnt);
           cnt+=1;
       }
-      int users_segment = 0;
-        MarketSegment segment = c.getMarketSegment();
+
+      //users in order of marketsegments. 
       int Users[] = {4956,5044,4589,5411,8012,1988,2353,2603,3631,1325,2236,2808,4381,663,3816,773,4196,1215,1836,517,1795,808,1980,256,2401,407};      
+      Set<SimpleBidEntry> bidEntries = new HashSet<SimpleBidEntry>();
+      // Logging.log("Market Segment = " + c.getMarketSegment());
+      // Logging.log("Iterate over all Market Segments");
+      MarketSegment segment = c.getMarketSegment();
+      int users_segment = 0;
       for (MarketSegment m: MarketSegment.values())//iterate over a market-segment
       {
           boolean ans = MarketSegment.marketSegmentSubset(segment,m);
@@ -55,29 +66,33 @@ public class OneAgent extends ThirtyDaysThirtyCampaignsAgent {
             users_segment+=Users[idx];
           }
       }
-
-      //users in order of marketsegments. 
-
-      // Bidding only on the exact market segment of the campaign.
-      Set<SimpleBidEntry> bidEntries = new HashSet<SimpleBidEntry>();
-      Logging.log("Market Segment = " + c.getMarketSegment());
-      Logging.log("Iterate over all Market Segments");
+      double k = 1077;       
       for (MarketSegment m: MarketSegment.values())//iterate over a market-segment
       {
         boolean ans = MarketSegment.marketSegmentSubset(segment,m);
-        if (ans)
+        if(ans)
         {
+          Logging.log(m);
+          Logging.log("Quality_score: " + quality_score);
+          if(quality_score==1)
+          {
             double num = Users[Ms.get(m)];
             double denom = users_segment;
             double ratio = num/denom;
-            // Logging.log(ratio);
+            Logging.log(ratio);
             double spending_Limit = (c.getBudget())*ratio;
-            // Logging.log(spending_Limit);
+            Logging.log(spending_Limit);
             bidEntries.add(new SimpleBidEntry(m,optimalBid,spending_Limit));
-
+          }
+          else
+          {
+            double bid = k/c.getReach();
+            Logging.log(bid);
+            bidEntries.add(new SimpleBidEntry(m,bid,k));
+          }
         }
       }
-      
+
       Logging.log("[-] bidEntries = " + bidEntries);
       //return new TwoDaysBidBundle(day, c.getId(), c.getBudget(), bidEntries);
       return new ThirtyDaysBidBundle(day, c.getId(), c.getBudget(), bidEntries);
@@ -93,8 +108,8 @@ public class OneAgent extends ThirtyDaysThirtyCampaignsAgent {
    * @param args
    */
   public static void main(String[] args) {
-    OneAgent agent = new OneAgent("localhost", 9898);
-    agent.connect("agent1");
+    agentb agent = new agentb("localhost", 9899);
+    agent.connect("agent4");
   }
 
 }

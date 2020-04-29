@@ -49,7 +49,7 @@ public class SimpleThirtyDaysThirtyCampaignsAgent extends ThirtyDaysThirtyCampai
    */
   public static void main(String[] args) {
 	  SimpleThirtyDaysThirtyCampaignsAgent agent = new SimpleThirtyDaysThirtyCampaignsAgent("localhost", 9898);
-    agent.connect("agent1");
+    agent.connect("agent1_simple");
   }
 
 }

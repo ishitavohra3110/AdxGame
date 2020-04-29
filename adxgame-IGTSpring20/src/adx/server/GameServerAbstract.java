@@ -99,8 +99,17 @@ abstract public class GameServerAbstract {
     // Sundays
     agentsInfo.put("agent0", "123456");
     agentsInfo.put("agent1", "123456");
-    agentsInfo.put("agent_overflow","123456");
+    agentsInfo.put("agent2","123456");
+    agentsInfo.put("agent3","123456");
     agentsInfo.put("agent4", "123456");
+    agentsInfo.put("agent5","123456");
+    agentsInfo.put("agent6","123456");
+    agentsInfo.put("agent7","123456");
+    agentsInfo.put("agent8","123456");
+    agentsInfo.put("agent9","123456");
+    agentsInfo.put("agent10","123456");
+    agentsInfo.put("agent11","123456");
+
 
     return agentsInfo.containsKey(agentName) && agentsInfo.get(agentName).equals(agentPassword);
   }

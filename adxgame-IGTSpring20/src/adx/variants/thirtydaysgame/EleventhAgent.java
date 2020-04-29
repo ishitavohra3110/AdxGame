@@ -17,9 +17,9 @@ import adx.util.Logging;
  * 
  * @author Enrique Areyan Viqueira
  */
-public class OneAgent extends ThirtyDaysThirtyCampaignsAgent {
+public class EleventhAgent extends ThirtyDaysThirtyCampaignsAgent {
 
-  public OneAgent(String host, int port) {
+  public EleventhAgent(String host, int port) {
     super(host, port);
   }
 
@@ -60,8 +60,8 @@ public class OneAgent extends ThirtyDaysThirtyCampaignsAgent {
 
       // Bidding only on the exact market segment of the campaign.
       Set<SimpleBidEntry> bidEntries = new HashSet<SimpleBidEntry>();
-      Logging.log("Market Segment = " + c.getMarketSegment());
-      Logging.log("Iterate over all Market Segments");
+      // Logging.log("Market Segment = " + c.getMarketSegment());
+      // Logging.log("Iterate over all Market Segments");
       for (MarketSegment m: MarketSegment.values())//iterate over a market-segment
       {
         boolean ans = MarketSegment.marketSegmentSubset(segment,m);
@@ -93,8 +93,8 @@ public class OneAgent extends ThirtyDaysThirtyCampaignsAgent {
    * @param args
    */
   public static void main(String[] args) {
-    OneAgent agent = new OneAgent("localhost", 9898);
-    agent.connect("agent1");
+    EleventhAgent agent = new EleventhAgent("localhost", 9898);
+    agent.connect("agent11");
   }
 
 }

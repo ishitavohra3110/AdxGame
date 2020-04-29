@@ -72,22 +72,22 @@ public class FourAgent extends ThirtyDaysThirtyCampaignsAgent {
         boolean ans = MarketSegment.marketSegmentSubset(segment,m);
         if(ans)
         {
-          Logging.log(m);
+          // Logging.log(m);
           Logging.log("Quality_score: " + quality_score);
           if(quality_score==1)
           {
             double num = Users[Ms.get(m)];
             double denom = users_segment;
             double ratio = num/denom;
-            Logging.log(ratio);
+            // Logging.log(ratio);
             double spending_Limit = (c.getBudget())*ratio;
-            Logging.log(spending_Limit);
+            // Logging.log(spending_Limit);
             bidEntries.add(new SimpleBidEntry(m,optimalBid,spending_Limit));
           }
           else
           {
             double bid = k/c.getReach();
-            Logging.log(bid);
+            // Logging.log(bid);
             bidEntries.add(new SimpleBidEntry(m,bid,k));
           }
         }

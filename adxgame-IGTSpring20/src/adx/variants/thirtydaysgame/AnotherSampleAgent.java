@@ -49,7 +49,7 @@ public class AnotherSampleAgent extends ThirtyDaysThirtyCampaignsAgent {
    */
   public static void main(String[] args) {
 	  AnotherSampleAgent agent = new AnotherSampleAgent("localhost", 9898);
-    agent.connect("agent0");
+    agent.connect("agent0_2");
   }
 
 }
