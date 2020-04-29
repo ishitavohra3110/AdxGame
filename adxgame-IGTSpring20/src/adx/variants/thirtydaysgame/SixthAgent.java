@@ -67,11 +67,12 @@ public class SixthAgent extends ThirtyDaysThirtyCampaignsAgent {
         boolean ans = MarketSegment.marketSegmentSubset(segment,m);
         if (ans)
         {
+            double reach = c.getReach();
             double num = Users[Ms.get(m)];
             double denom = users_segment;
-            double ratio = num/denom;
             // Logging.log(ratio);
-            double spending_Limit = (c.getReach())*ratio;
+            double spending_Limit = Math.ceil((reach*num)/denom);
+
             // Logging.log(spending_Limit);
             bidEntries.add(new SimpleBidEntry(m,optimalBid,spending_Limit));
 

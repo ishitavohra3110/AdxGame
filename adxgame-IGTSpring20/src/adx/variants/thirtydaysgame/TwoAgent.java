@@ -4,6 +4,7 @@ import java.util.HashSet;
 import java.util.Set;
 import java.util.Hashtable; 
 import java.util.Map; 
+import java.lang.Math;
 
 import adx.exceptions.AdXException;
 import adx.structures.Campaign;

@@ -4,6 +4,7 @@ import java.util.HashSet;
 import java.util.Set;
 import java.util.Hashtable; 
 import java.util.Map; 
+import java.lang.Math;
 
 import adx.exceptions.AdXException;
 import adx.structures.Campaign;
@@ -59,6 +60,7 @@ public class FourAgent extends ThirtyDaysThirtyCampaignsAgent {
       int users_segment = 0;
       for (MarketSegment m: MarketSegment.values())//iterate over a market-segment
       {
+        // Logging.log(m);
           boolean ans = MarketSegment.marketSegmentSubset(segment,m);
           if(ans)
           {
@@ -70,6 +72,7 @@ public class FourAgent extends ThirtyDaysThirtyCampaignsAgent {
       for (MarketSegment m: MarketSegment.values())//iterate over a market-segment
       {
         boolean ans = MarketSegment.marketSegmentSubset(segment,m);
+        double reach = c.getReach();
         if(ans)
         {
           // Logging.log(m);
@@ -78,15 +81,14 @@ public class FourAgent extends ThirtyDaysThirtyCampaignsAgent {
           {
             double num = Users[Ms.get(m)];
             double denom = users_segment;
-            double ratio = num/denom;
             // Logging.log(ratio);
-            double spending_Limit = (c.getBudget())*ratio;
+            double spending_Limit = Math.ceil((reach*num)/denom);
             // Logging.log(spending_Limit);
             bidEntries.add(new SimpleBidEntry(m,optimalBid,spending_Limit));
           }
           else
           {
-            double bid = k/c.getReach();
+            double bid = k/reach;
             // Logging.log(bid);
             bidEntries.add(new SimpleBidEntry(m,bid,k));
           }
