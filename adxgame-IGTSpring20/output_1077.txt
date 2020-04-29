@@ -1,0 +1,22 @@
+[-] Server Initialized at 2020-04-29T19:43:38.403Z
+[-] Accepting connections until 2020-04-29T19:44:38.969Z
+	[-] Trying to register agent: agent3, with password: 123456
+		[-] Agent credentials are valid, agent registered
+	[-] Trying to register agent: agent6, with password: 123456
+		[-] Agent credentials are valid, agent registered
+	[-] Trying to register agent: agent4, with password: 123456
+		[-] Agent credentials are valid, agent registered
+	[-] Trying to register agent: agent11, with password: 123456
+		[-] Agent credentials are valid, agent registered
+	[-] Trying to register agent: agent9, with password: 123456
+		[-] Agent credentials are valid, agent registered
+	[-] Trying to register agent: agent1, with password: 123456
+		[-] Agent credentials are valid, agent registered
+	[-] Trying to register agent: agent2, with password: 123456
+		[-] Agent credentials are valid, agent registered
+	[-] Trying to register agent: agent5, with password: 123456
+		[-] Agent credentials are valid, agent registered
+	[-] Trying to register agent: agent10, with password: 123456
+		[-] Agent credentials are valid, agent registered
+	[-] Trying to register agent: agent7, with password: 123456
+		[-] Agent credentials are valid, agent registered

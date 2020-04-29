@@ -13,13 +13,13 @@ import adx.test.MarketSegmentTest;
 
 import adx.util.Logging;
 /**
- * An example of a simple agent playing the TwoDays game.
+ * An example of a simple agent playing the EightDays game.
  * 
  * @author Enrique Areyan Viqueira
  */
-public class EighthAgent extends ThirtyDaysThirtyCampaignsAgent {
+public class EightAgent extends ThirtyDaysThirtyCampaignsAgent {
 
-  public EighthAgent(String host, int port) {
+  public EightAgent(String host, int port) {
     super(host, port);
   }
 
@@ -79,7 +79,7 @@ public class EighthAgent extends ThirtyDaysThirtyCampaignsAgent {
       }
       
       Logging.log("[-] bidEntries = " + bidEntries);
-      //return new TwoDaysBidBundle(day, c.getId(), c.getBudget(), bidEntries);
+      //return new EightDaysBidBundle(day, c.getId(), c.getBudget(), bidEntries);
       return new ThirtyDaysBidBundle(day, c.getId(), c.getBudget(), bidEntries);
     } catch (AdXException e) {
       Logging.log("[x] Something went wrong getting the bid bundle: " + e.getMessage());
@@ -93,7 +93,7 @@ public class EighthAgent extends ThirtyDaysThirtyCampaignsAgent {
    * @param args
    */
   public static void main(String[] args) {
-    EighthAgent agent = new EighthAgent("localhost", 9898);
+    EightAgent agent = new EightAgent("localhost", 9898);
     agent.connect("agent8");
   }
 

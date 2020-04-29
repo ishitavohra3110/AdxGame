@@ -1,0 +1,31 @@
+Started AgentFour
+Started AgentOne
+Started AgentTwo
+Started AgentThree
+Started AgentFive
+Started AgentSix
+Started AgentSeven
+Started AgentEight
+Started AgentNine
+Started AgentTen
+Started AgentEleven
+[-] Received ConnectServerMessage, server response is: OK
+[-] Agent: agent3 is in the game!
+[-] Received ConnectServerMessage, server response is: OK
+[-] Agent: agent6 is in the game!
+[-] Received ConnectServerMessage, server response is: OK
+[-] Agent: agent4 is in the game!
+[-] Received ConnectServerMessage, server response is: OK
+[-] Agent: agent11 is in the game!
+[-] Received ConnectServerMessage, server response is: OK
+[-] Agent: agent9 is in the game!
+[-] Received ConnectServerMessage, server response is: OK
+[-] Agent: agent1 is in the game!
+[-] Received ConnectServerMessage, server response is: OK
+[-] Agent: agent2 is in the game!
+[-] Received ConnectServerMessage, server response is: OK
+[-] Agent: agent5 is in the game!
+[-] Received ConnectServerMessage, server response is: OK
+[-] Agent: agent10 is in the game!
+[-] Received ConnectServerMessage, server response is: OK
+[-] Agent: agent7 is in the game!
