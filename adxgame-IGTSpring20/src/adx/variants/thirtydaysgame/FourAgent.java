@@ -68,15 +68,17 @@ public class FourAgent extends ThirtyDaysThirtyCampaignsAgent {
             users_segment+=Users[idx];
           }
       }
-      double k = 600;       
+      double k = 900;       
       for (MarketSegment m: MarketSegment.values())//iterate over a market-segment
       {
         boolean ans = MarketSegment.marketSegmentSubset(segment,m);
         double reach = c.getReach();
+        if(day==30 && quality_score==0)
+          continue;
         if(ans)
         {
           // Logging.log(m);
-          Logging.log("Quality_score: " + quality_score);
+          // Logging.log("Quality_score: " + quality_score);
           if(quality_score==1)
           {
             double num = Users[Ms.get(m)];
