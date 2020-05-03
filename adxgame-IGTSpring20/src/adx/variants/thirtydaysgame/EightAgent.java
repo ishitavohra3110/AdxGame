@@ -68,7 +68,7 @@ public class EightAgent extends ThirtyDaysThirtyCampaignsAgent {
             users_segment+=Users[idx];
           }
       }
-      double k = 900;       
+      double k = 800;       
       for (MarketSegment m: MarketSegment.values())//iterate over a market-segment
       {
         boolean ans = MarketSegment.marketSegmentSubset(segment,m);
